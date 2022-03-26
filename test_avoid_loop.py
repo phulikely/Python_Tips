@@ -11,10 +11,20 @@ list_2 = my_list2[:]
 
 
 def get_images_from_list_download(list_file):
-    return [image for image in list_file if
-            image.endswith('.png') or image.endswith('.jpg') or image.endswith('.jpeg')]
+    l_img_only = ['png', 'jpeg', 'jpg']
+    return [image for image in list_file if image.endswith(tuple(l_img_only))]
 
 
 list_download = ['aaaa.xyz', 'bbbb.png', 'ccccc.jpeg', 'dddddd.txt', 'eeeee.jpg']
 new_list = get_images_from_list_download(list_download)
-print(new_list)
+# print(new_list)
+
+
+def get_obj_stl_from_list_download(list_download):
+    l_obj_stl_ext = ['obj', 'stl']
+    return [file for file in list_download if file.endswith(tuple(l_obj_stl_ext))]
+
+
+list_download = ['aaaaa.obj', 'bbbbbb.oaa', 'cccc.stl', 'dddddd.stl']
+n_list = get_obj_stl_from_list_download(list_download)
+print(n_list)
