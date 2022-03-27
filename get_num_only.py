@@ -7,4 +7,4 @@ only_number_list = [float(s) for s in re.findall(r'-?\d+\.?\d*', list_loc)]
 
 list1 = only_number_list[0:3]
 list2 = only_number_list[3:6]
-print(list2)
+print(only_number_list)

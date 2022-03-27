@@ -15,7 +15,7 @@ def get_images_from_list_download(list_file):
     return [image for image in list_file if image.endswith(tuple(l_img_only))]
 
 
-list_download = ['aaaa.xyz', 'bbbb.png', 'ccccc.jpeg', 'dddddd.txt', 'eeeee.jpg']
+list_download = ['aaaa.xyz', 'bbbb.png', 'ccccc.jpeg', 'dddddd.txt', 'eeeee.jpg', 'fffff.png']
 new_list = get_images_from_list_download(list_download)
 # print(new_list)
 

@@ -267,4 +267,22 @@ value = sqrt(50)
 output = " ".join(["Programming" , "is", "fun"])
 
 
+#33 Create list of tuple from given coordinates
+li = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+v = iter(li)
 
+li = [(i, next(v), next(v)) for i in v]  # creates list of tuples
+print(li) # [(1, 2, 3), (4, 5, 6), (7, 8, 9), (10, 11, 12), (13, 14, 15), (16, 17, 18)]
+
+list_points = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+new_l = [tuple(i) for i in list_points]
+print(new_l) # [(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+
+
+#34 Get number only from list string
+import re
+
+list_loc = [[10.123, 20, 30.555999], [-40.555, 50, 60]]
+list_loc = str(list_loc)
+only_number_list = [float(s) for s in re.findall(r'-?\d+\.?\d*', list_loc)]
+print(list2) # [10.123, 20.0, 30.555999, -40.555, 50.0, 60.0]
