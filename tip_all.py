@@ -286,3 +286,55 @@ list_loc = [[10.123, 20, 30.555999], [-40.555, 50, 60]]
 list_loc = str(list_loc)
 only_number_list = [float(s) for s in re.findall(r'-?\d+\.?\d*', list_loc)]
 print(list2) # [10.123, 20.0, 30.555999, -40.555, 50.0, 60.0]
+
+
+#35 Dictionary
+dic = {"a": 1, "b": 2}
+a, b = dic
+print(a, b) #a b
+c, d = dic.item()
+print(c, d) #1 2
+
+
+#36 *args and **kwargs
+def func1(arg1, arg2, arg3):
+    print(arg1, arg2, arg3)
+
+args = [1, 2, 3]
+func1(**args)
+
+
+def func2(arg1=None, arg2=None, arg3=None):
+    print(arg1, arg2, arg3)
+
+kwargs = {"arg2": 2, "arg1": 1, "arg3": 3}
+func2(*args) # arg2 arg1 arg3   #key
+func2(**args) # 1 2 3           #value
+
+
+#37 For else & While else
+search = [1, 2, 3, 4, 5, 6, 7]
+target = 7
+
+for item in search:
+    if item == target:
+        print('I found it!')
+        break
+else:
+    print("I didn't find it!")
+
+i = 0
+while i < len(search):
+    item = search[i]
+    if item == target:
+        print('I found it!')
+        break
+    i += 1
+else:
+    print("I didn't find it!")
+
+
+# 38 Suppress scientific notation
+1.00000e-05
+>>> f'{a:.20f}'
+'-0.00000000000000007186'
