@@ -14,7 +14,7 @@ Path('data').mkdir(exist_ok=True)
 # file_handling.py
 # test_file.py
 for file in os.listdir():
-    if file == '.DS_Store' or file.endswith('py') or file == 'data':
+    if file == '.DS_Store' or file.endswith('py'):
         continue    # continue for loop, cau lenh phia sau ko dc thuc thi
         # pass      # cau lenh phia sau van dc thuc hien
 
@@ -49,7 +49,5 @@ for file in os.listdir():
 
     os.rename(file, new_name)
 
-    # shutil.move(new_name, 'data')
-    shutil.copy(new_name, 'data')
+    shutil.move(file, 'data')
 
-shutil.rmtree('data')
