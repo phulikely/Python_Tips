@@ -26,3 +26,33 @@ git stash show
 
 # Clear all stash
 git stash clear
+
+
+
+-----
+my branch: R-002-Optimize-Code-SLES15SP1-Sybase-Phuch
+git rebase R-002-Optimize-Code
+git log
+
+git checkout R-002-Optimize-Code
+git merge R-002-Optimize-Code-SLES15SP1-Sybase-Phuch
+
+-----
+
+# Undo a Git commit that was not pushed:
+    # Method 1: Undo commit and keep all files staged
+    git reset --soft HEAD~
+    
+    # Method 2: Undo commit and unstage all files
+    git reset HEAD~
+    
+    # Method 3: Undo the commit and completely remove all changes
+    git reset --hard HEAD~
+
+-----
+
+# Delete branch locally
+git branch -d localBranchName
+
+# Delete branch remotely
+git push origin --delete remoteBranchName
