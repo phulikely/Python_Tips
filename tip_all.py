@@ -338,3 +338,108 @@ else:
 1.00000e-05
 >>> f'{a:.20f}'
 '-0.00000000000000007186'
+
+
+#39 If else in one line
+var = 42 if 3>2 else 9
+print(var)
+
+
+#40 Print without new lines
+data = [0, 1, 2, 3, 4, 5]
+print(*data)    # 0 1 2 3 4 5
+
+
+#41 Day left in year
+import datetime;print((datetime.data(2022,12,31)-datetime.date.today()).days)
+
+
+#42 Reverse a list
+a = [1, 2, 3, 4, 5, 6]
+a = a[::-1]
+print(a)    #[6, 5, 4, 3, 2, 1]
+
+b = 'level'
+b = b[::-1]
+print(b)    #level
+print(b == b[::-1]) #True
+
+
+#43 Space separated numbers to int list
+user_input = "1 2 3 4 5 6"
+my_list = list(map(int, user_input.split()))
+print(my_list)  #[1, 2, 3, 4, 5, 6]
+
+
+#44 Read file into list
+names = [line.strip() for line in open('names.txt', 'r')]
+print(names)    #['Jessi', 'Robin', 'Mary', 'Tom', 'PAA']
+
+
+#45 Use sum in a loop
+numbers = [10, 20, 30, 40, 50]
+result = sum(numbers)
+print(result)   #150
+
+
+#46 Use enumerate
+numbers = [10, 20, 33, 40]
+for idx, val in enumerate(numbers, start=1):
+    print(idx, val) #1  10
+                    #2  20
+                    #3  33
+                    #4  40
+
+
+#47 Use zip
+a = [1, 2, 3, 4]
+b = ['a', 'b', 'c']
+for val1, val2 in zip(a, b):
+    print(val1, val2)   #1  a
+                        #2  b
+                        #3  c
+
+
+#48 Think lazy! Use a generator
+events = [('learn', 5), ('learn', 10), ('relaxed', 20)]
+study_times = (event[1] for event in events if event[0] == 'learn')
+minutes_studied = sum(study_times)
+print(minutes_studied)  #15
+
+
+#49 Use itertools
+from itertools import islice
+lines = ['line1', 'line2', 'line3', 'line4', 'line5', 'line6', 'line7', 'line8',]
+first_five_lines = islice(lines, 5)
+first_five_lines_2 = islice(lines, 1, 5)
+for line in first_five_lines:
+    print(line) #line1
+                #line2
+                #line3
+                #line4
+                #line5
+
+for line in first_five_lines_2:
+    print(line)
+                #line2
+                #line3
+                #line4
+                #line5
+
+data = 'ABCDEF'
+from itertools import pairwise
+for pair in pairwise(data):
+    print(pair[0], pair[1]) #A B
+                            #B C
+                            #C D
+                            #D E
+                            #E F
+                            #F G
+
+from itertools import takewhile
+items = takewhile(lambda x:x >= 0, [1, 2, 4, -1, 4, 1])
+for item in items:
+    print(item) #1
+                #2
+                #4
+
